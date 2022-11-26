@@ -3,3 +3,6 @@
 
 # Ignore bundle
 .bundle
+
+# Ignore irb history
+.irb-history

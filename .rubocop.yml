@@ -11,3 +11,6 @@
 require:
   - rubocop-performance
   - rubocop-rspec
+
+Style/Documentation:
+  Enabled: false

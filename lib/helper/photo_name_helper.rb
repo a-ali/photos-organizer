@@ -16,9 +16,13 @@ module Helper
       {
         extension:,
         name: File.basename(name, extension),
-        city: Repository::CityRepository.find_or_create_by(name: city_name),
+        city: city_repository.find_or_create_by(name: city_name),
         date: DateTime.strptime(photo_date, DATE_FORMAT)
       }
+    end
+
+    def city_repository
+      @city_repository ||= Repository::CityRepository.new
     end
   end
 end

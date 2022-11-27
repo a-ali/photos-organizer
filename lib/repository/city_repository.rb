@@ -5,7 +5,7 @@ require 'resource/city'
 
 module Repository
   class CityRepository < BaseRepository
-    def self.find_or_create_by(name:)
+    def find_or_create_by(name:)
       record = store.find_by(name:)
       return record if record
 

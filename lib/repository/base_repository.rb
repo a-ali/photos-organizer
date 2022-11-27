@@ -5,20 +5,18 @@ require 'store/memory_store'
 module Repository
   # Abstract repository
   class BaseRepository
-    def initialize(*); end
+    attr_reader :store
 
-    class << self
-      def store
-        @store ||= default_store
-      end
+    def initialize(store: default_store)
+      @store = store
+    end
 
-      def find_or_create_by(); end
+    def find_or_create_by(); end
 
-      private
+    private
 
-      def default_store
-        Store::MemoryStore.instance
-      end
+    def default_store
+      Store::MemoryStore.instance
     end
   end
 end

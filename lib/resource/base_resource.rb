@@ -29,5 +29,11 @@ module Resource
       end
       "#<#{self.class.name} #{attrs.join(', ')}>"
     end
+
+    def ==(other)
+      attributes.all? do |attribute|
+        public_send(attribute) == other.public_send(attribute)
+      end
+    end
   end
 end

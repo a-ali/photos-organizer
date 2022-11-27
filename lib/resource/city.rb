@@ -6,9 +6,5 @@ module Resource
   # City resource
   class City < BaseResource
     attributes %i[name]
-
-    def ==(other)
-      other.name == name
-    end
   end
 end

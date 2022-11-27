@@ -3,7 +3,7 @@
 require 'repository/city_repository'
 require 'date'
 
-# Prases given photo name into name, city, and date
+# Parses given photo name into name, city, and date
 module Helper
   module PhotoNameHelper
     SEPARATOR = ','

@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-require_relative 'photo_name_parser'
+require 'helper/photo_name_helper'
 
 module Parser
   # Abstract photos parser
   class BaseParser
-    include PhotoNameParser
+    include Helper::PhotoNameHelper
 
     def initialize(*); end
 

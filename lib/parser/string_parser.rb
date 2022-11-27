@@ -14,15 +14,25 @@ module Parser
       super
     end
 
-    def photos
-      source.split(separator).map do |photo_name|
-        attrs = parse_photo_name(photo_name)
-        yield(Resource::Photo.new(**attrs))
+    def photos(&block)
+      @photos ||= parse_photos
+
+      if block
+        @photos.each(&block)
+      else
+        @photos
       end
     end
 
     private
 
     attr_accessor :source, :separator
+
+    def parse_photos
+      source.split(separator).map do |photo_name|
+        attrs = parse_photo_name(photo_name)
+        Resource::Photo.new(**attrs)
+      end
+    end
   end
 end

@@ -1,14 +1,8 @@
 # frozen_string_literal: true
 
-require 'singleton'
-
 module Store
-  # Abstract store
-  class BaseStore
-    include Singleton
-
+  class NullStore
     def find_by(*); end
     def create(_); end
-    def clear; end
   end
 end

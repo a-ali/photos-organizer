@@ -9,14 +9,18 @@ module Store
     # Returns the first record whose attributes equals the given attributes
     def find_by(**attributes)
       records.find do |item|
-        item.attributes.reduce(true) do |acc, attr|
-          acc && item.public_send(attr) == attributes[attr]
+        attributes.keys.all? do |attr|
+          item.public_send(attr) == attributes[attr]
         end
       end
     end
 
     def create(record)
       records << record
+    end
+
+    def clear
+      @records = []
     end
 
     private

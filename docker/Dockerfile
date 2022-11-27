@@ -1,8 +1,8 @@
 FROM ruby:3.1.3-alpine3.16
 
 ARG APP_USER_ID
-ENV APP_USER             photo-organizer
-ENV PROJECT_DIRECTORY    photo-organizer
+ENV APP_USER             photos-organizer
+ENV PROJECT_DIRECTORY    photos-organizer
 ENV USER_HOME_DIRECTORY  /home/${APP_USER}
 ENV APP_PATH             ${USER_HOME_DIRECTORY}/${PROJECT_DIRECTORY}
 ENV BUNDLED_GEMS_PATH    ${APP_PATH}/.bundle

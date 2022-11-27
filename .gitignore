@@ -6,3 +6,5 @@
 
 # Ignore irb history
 .irb-history
+
+files/photos.txt

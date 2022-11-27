@@ -1,17 +1,17 @@
 services:
   app:
-    container_name: photo-organizer
+    container_name: photos-organizer
     build:
       context: .
       dockerfile: ./docker/Dockerfile
       args:
         APP_USER_ID: ${APP_USER_ID}
     volumes:
-      - .:/home/photo-organizer/photo-organizer:cached
-      - ~/.ssh:/home/photo-organizer/.ssh
-      - ~/.gnupg:/home/photo-organizer/.gnupg
+      - .:/home/photos-organizer/photos-organizer:cached
+      - ~/.ssh:/home/photos-organizer/.ssh
+      - ~/.gnupg:/home/photos-organizer/.gnupg
       - ~/.gitconfig:/etc/gitconfig
     tty: true
-    entrypoint: [ "/home/photo-organizer/entrypoint.sh" ]
+    entrypoint: [ "/home/photos-organizer/entrypoint.sh" ]
     stdin_open: true
     command: ["tail", "-f", "/dev/null"]
